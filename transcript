@@ -1,0 +1,21 @@
+# Compile of IF_Stage.v was successful.
+# Compile of ID_Stage.v failed with 1 errors.
+# Compile of EXE_Stage.v failed with 1 errors.
+# Compile of MEM_Stage.v failed with 1 errors.
+# Compile of WB_Stage.v failed with 1 errors.
+# Compile of IF_Stage_Reg.v was successful.
+# Compile of EXE_Stage_Reg.v failed with 1 errors.
+# Compile of ID_Stage_Reg.v failed with 1 errors.
+# Compile of MEM_Stage_Reg.v failed with 1 errors.
+# Compile of WB_Stage_Reg.v failed with 1 errors.
+# Compile of Instruction_Memory.v was successful.
+# 11 compiles, 8 failed with 8 errors.
+# Compile of ID_Stage.v was successful.
+# Compile of EXE_Stage.v was successful.
+# Compile of MEM_Stage.v was successful.
+# Compile of WB_Stage.v was successful.
+# Compile of EXE_Stage_Reg.v was successful.
+# Compile of ID_Stage_Reg.v was successful.
+# Compile of MEM_Stage_Reg.v was successful.
+# Compile of WB_Stage_Reg.v was successful.
+# 8 compiles, 0 failed with no errors.
