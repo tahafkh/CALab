@@ -5,11 +5,11 @@ module InstructionMemory (
 );
     reg [31:0] memory [0:1023];
 	
-    //always @(posedge rst) begin
-    //    $readmemb("instructions.mem", memory);
-    //end
-    //assign instructions = memory[PC[31:2]];
+    always @(posedge rst) begin
+        $readmemb("instructions.mem", memory);
+    end
+    assign instructions = memory[PC];
 	
-	assign instructions = ???;
+	// assign instructions = ???;
 	
 endmodule
