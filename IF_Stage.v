@@ -1,16 +1,21 @@
 module IF_Stage (
     input clk, rst, freeze, Branch_taken, 
-    input [31:0] BranchAdr,
-    output reg [31:0] PC, Instruction
+    input [31:0] BranchAddr,
+    output [31:0] PC, Instruction
 );
+
+    reg [31:0] PC_reg;
+
     always @(posedge clk, posedge rst) begin
         if (rst) begin
-            PC <= 32'd0;
+            PC_reg <= 32'd0;
         end
         else if (freeze != 1'b1) begin
-            PC <= Branch_taken ? BranchAdr : PC + 32'd4;
+            PC_reg <= Branch_taken ? BranchAddr : PC_reg + 32'd4;
         end
     end
+
+    assign PC = PC_reg;
 	
-    InstructionMemory int_mem(.rst(rst), .PC(PC), .Instruction(Instruction));
+    InstructionMemory inst_mem(.rst(rst), .PC(PC), .Instruction(Instruction));
 endmodule

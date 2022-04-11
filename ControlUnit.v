@@ -1,16 +1,15 @@
 `include "instructions.v"
 
 module ControlUnit(
-        input s;
-		input[1 : 0] Mode;
-        input[3 : 0] Opcode;
-        output reg[3 : 0] exe_cmd;
-        output reg MEM_R_EN, MEM_W_EN, // Mem read/write
-                WB_EN, //write back enable
-                B, // Branch taken
-                S; // STATUS WRITE ENABLE
-		); //TODO: Get the last mux out
-
+	input s,
+	input[1 : 0] Mode,
+	input[3 : 0] Opcode,
+	output reg[3 : 0] exe_cmd,
+	output reg MEM_R_EN, MEM_W_EN, // Mem read/write
+			WB_EN, //write back enable
+			B, // Branch taken
+			S // STATUS WRITE ENABLE
+	);
 
 	always @(Mode, Opcode, s) begin
 		exe_cmd = 'd0; 

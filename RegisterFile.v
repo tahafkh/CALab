@@ -1,11 +1,11 @@
 module RegisterFile (
 	input clk, rst, 
-    input [3 : 0] src1, src2, Dest_wb, 
-	input[32 - 1:0] Result_wb,
-    input writebackEn,
-	output [32 - 1:0] reg1, reg2
+    input [3 : 0] src1, src2, WB_Dest, 
+	input[32 - 1:0] WB_Value,
+    input WB_EN,
+	output [32 - 1:0] Val_Rm, Val_Rn
 );
-    reg[32 - 1:0] data[0:16 - 1]; //?
+    reg[32 - 1:0] data[0:16 - 1];
 
     
     always @(negedge clk, posedge rst) begin
@@ -32,6 +32,6 @@ module RegisterFile (
             data[dest_wb] <= result_wb;
 	end
 
-    assign reg1 = data[src1];
-    assign reg2 = data[src2];
+    assign Val_Rm = data[src1];
+    assign Val_Rn = data[src2];
 endmodule 

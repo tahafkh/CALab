@@ -4,4 +4,11 @@ module EXE_Stage_Reg (
 	input [31:0] PC_in,
 	output reg[31:0] PC
 );
+
+	always @(posedge clk, posedge rst) 
+        if (rst)
+            PC <= 'd0;
+        else
+            PC <= PC_in;
+
 endmodule

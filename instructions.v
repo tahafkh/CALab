@@ -43,4 +43,11 @@
 `define LE    4'b1101
 `define AL    4'b1110
 
+// Shifts
+
+`define LSL_SHIFT 2'b00
+`define LSR_SHIFT 2'b01
+`define ASR_SHIFT 2'b10
+`define ROR_SHIFT 2'b11 
+
 `endif

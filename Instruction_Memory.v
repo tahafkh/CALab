@@ -8,8 +8,6 @@ module InstructionMemory (
     always @(posedge rst) begin
         $readmemb("instructions.mem", memory);
     end
-    assign instructions = memory[PC];
-	
-	// assign instructions = ???;
+    assign Instruction = memory[PC];
 	
 endmodule
