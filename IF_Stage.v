@@ -15,7 +15,7 @@ module IF_Stage (
         end
     end
 
-    assign PC = PC_reg;
+    assign PC = {2'd0, PC_reg[31:2]};
 	
     InstructionMemory inst_mem(.rst(rst), .PC(PC), .Instruction(Instruction));
 endmodule

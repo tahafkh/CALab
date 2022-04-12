@@ -26,30 +26,6 @@ module ID_Stage (
 	assign Signed_imm_24 = Instruction_in[23:0];
 	assign Dest = Instruction_in[15:12];
 
-	//-----------------Register File-----------------//
-	wire[3:0] src1, src2;
-	assign src1 = Instruction_in[19:16];
-	assign src2 = mem_write ? Instruction_in[15:12] : Instruction_in[3:0];
-
-	//TODO: Assign these to wires coming from WB Stage
-	wire[31:0] WB_Value;
-	wire[3:0] WB_Dest;
-	wire WB_EN;
-	assign WB_Value = 'd13;
-	assign WB_Value = 'd7;
-	assign WB_EN = 'd0;
-
-	RegisterFile register_file(.clk(clk), .rst(rst),
-    		.src1(src1), .src2(src2),
-			.WB_Dest(WB_Dest),
-			.WB_Value(WB_Value),
-    		.WB_EN(WB_EN),
-			.Val_Rm(Val_Rm), .Val_Rn(Val_Rn)
-	);
-
-	//-----------------PC Register-----------------//
-	assign PC = PC_in;
-	
 	//-----------------Control Unit-----------------//
 	wire mem_read, mem_write, wb_enable, branch_taken, status_write_enable;
 	wire [3:0] execute_command;
@@ -65,6 +41,30 @@ module ID_Stage (
 		.S(status_write_enable)
 		);
 
+	//-----------------Register File-----------------//
+	wire[3:0] src1, src2;
+	assign src1 = Instruction_in[19:16];
+	assign src2 = mem_write ? Instruction_in[15:12] : Instruction_in[3:0];
+
+	//TODO: Assign these to wires coming from WB Stage
+	wire[31:0] WB_Value;
+	wire[3:0] WB_Dest;
+	wire WB_WB_EN;
+	assign WB_Value = 'd13;
+	assign WB_Value = 'd7;
+	assign WB_WB_EN = 'd0;
+
+	RegisterFile register_file(.clk(clk), .rst(rst),
+    		.src1(src1), .src2(src2),
+			.WB_Dest(WB_Dest),
+			.WB_Value(WB_Value),
+    		.WB_EN(WB_WB_EN),
+			.Val_Rm(Val_Rm), .Val_Rn(Val_Rn)
+	);
+
+	//-----------------PC Register-----------------//
+	assign PC = PC_in;
+	
 	//-----------------Condition Check-----------------//
 
 	wire Cond_state;

@@ -1,4 +1,11 @@
-E:/UT/S6/CALab/WB_Stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/WB_Stage.v
+E:/UT/S6/CALab/Condition_Check.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/Condition_Check.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Condition_Check
+
+Top level modules:
+	Condition_Check
+
+} {} {}} E:/UT/S6/CALab/WB_Stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/WB_Stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module WB_Stage
 
@@ -11,6 +18,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	EXE_Stage
+
+} {} {}} E:/UT/S6/CALab/ID_Stage_Reg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/ID_Stage_Reg.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ID_Stage_Reg
+
+Top level modules:
+	ID_Stage_Reg
 
 } {} {}} E:/UT/S6/CALab/TB.v {1 {vlog -work work -stats=none {E:\UT\S6\CALab\TB.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -33,6 +47,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	MEM_Stage_Reg
 
+} {} {}} E:/UT/S6/CALab/ID_Stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/ID_Stage.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ID_Stage
+
+Top level modules:
+	ID_Stage
+
 } {} {}} E:/UT/S6/CALab/IF_Stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/IF_Stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module IF_Stage
@@ -53,6 +74,20 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	MEM_Stage
+
+} {} {}} E:/UT/S6/CALab/arm_processor.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/arm_processor.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ARM
+
+Top level modules:
+	ARM
+
+} {} {}} E:/UT/S6/CALab/ControlUnit.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/ControlUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ControlUnit
+
+Top level modules:
+	ControlUnit
 
 } {} {}} E:/UT/S6/CALab/WB_Stage_Reg.v {1 {vlog -work work -stats=none {E:\UT\S6\CALab\WB_Stage_Reg.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

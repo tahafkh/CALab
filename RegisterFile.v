@@ -28,8 +28,8 @@ module RegisterFile (
             data[15] <= 32'd15;
             
         end
-        else if (wb_enable) 
-            data[dest_wb] <= result_wb;
+        else if (WB_EN) 
+            data[WB_Dest] <= WB_Value;
 	end
 
     assign Val_Rm = data[src1];

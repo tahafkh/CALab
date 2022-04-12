@@ -72,9 +72,10 @@ module ALU (
                 alu_out	 = 	alu_in1 ^ alu_in2;
 
             `CMP: begin
-                {cout, alu_out} = {alu_in1[31], {alu_in1}} - {alu_in2[31], {alu_in2}};
-                    v = ((alu_in1[31] == ~alu_in2[31])
-                        & (alu_out[31] != alu_in1[31]));
+                {cout, alu_out} = {alu_in1[31], {alu_in1}} - 
+                                    {alu_in2[31], {alu_in2}};
+                v = ((alu_in1[31] == ~alu_in2[31]) 
+                    & (alu_out[31] != alu_in1[31]));
             end
     
 

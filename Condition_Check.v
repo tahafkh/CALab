@@ -1,9 +1,9 @@
 `include "instructions.v"
 
 module Condition_Check (
-    input [3 : 0] Cond;
-    input [3 : 0] stat_reg;
-    output Cond_state;
+    input [3 : 0] Cond,
+    input [3 : 0] stat_reg,
+    output Cond_state
 );
     wire z, c, n, v;
     assign {z, c, n, v} = stat_reg;

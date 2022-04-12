@@ -1,237 +1,248 @@
-vsim -gui work.ARM
-# vsim -gui work.ARM 
-# Start time: 15:44:21 on Apr 11,2022
-# Loading work.ARM
-# Loading work.IF_Stage
-# Loading work.InstructionMemory
-# Loading work.IF_Stage_Reg
-# Loading work.ID_Stage
-# Loading work.ID_Stage_Reg
-# ** Error: (vsim-3033) Instantiation of 'EX_Stage' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /ARM File: E:/UT/S6/CALab/arm_processor.v Line: 44
-#         Searched libraries:
-#             E:/UT/S6/CALab/arm
-# ** Error: (vsim-3033) Instantiation of 'EX_Stage_Reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /ARM File: E:/UT/S6/CALab/arm_processor.v Line: 46
-#         Searched libraries:
-#             E:/UT/S6/CALab/arm
-# Loading work.MEM_Stage
-# Loading work.MEM_Stage_Reg
-# Loading work.WB_Stage
-# Error loading design
-# End time: 15:44:22 on Apr 11,2022, Elapsed time: 0:00:01
-# Errors: 2, Warnings: 1
-# Compile of ID_Stage.v was successful.
-# Compile of EXE_Stage.v was successful.
-# Compile of MEM_Stage.v was successful.
-# Compile of WB_Stage.v was successful.
-# Compile of EXE_Stage_Reg.v was successful.
+# Compile of IF_Stage.v was successful.
+# Compile of ID_Stage.v failed with 3 errors.
 # Compile of ID_Stage_Reg.v was successful.
-# Compile of MEM_Stage_Reg.v was successful.
-# 7 compiles, 0 failed with no errors.
-vsim -gui work.ARM
-# vsim -gui work.ARM 
-# Start time: 15:48:08 on Apr 11,2022
-# Loading work.ARM
-# Loading work.IF_Stage
-# Loading work.InstructionMemory
-# Loading work.IF_Stage_Reg
-# Loading work.ID_Stage
-# Loading work.ID_Stage_Reg
-# ** Error: (vsim-3033) Instantiation of 'EX_Stage' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /ARM File: E:/UT/S6/CALab/arm_processor.v Line: 44
-#         Searched libraries:
-#             E:/UT/S6/CALab/arm
-# ** Error: (vsim-3033) Instantiation of 'EX_Stage_Reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /ARM File: E:/UT/S6/CALab/arm_processor.v Line: 46
-#         Searched libraries:
-#             E:/UT/S6/CALab/arm
-# Loading work.MEM_Stage
-# Loading work.MEM_Stage_Reg
-# Loading work.WB_Stage
-# Error loading design
-# End time: 15:48:08 on Apr 11,2022, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 2
+# Compile of arm_processor.v failed with 1 errors.
+# 4 compiles, 2 failed with 4 errors.
+# Compile of ID_Stage.v failed with 3 errors.
+# Compile of arm_processor.v failed with 1 errors.
+# 2 compiles, 2 failed with 4 errors.
+# Compile of ID_Stage.v failed with 1 errors.
+# Compile of arm_processor.v failed with 1 errors.
+# 2 compiles, 2 failed with 2 errors.
+# Compile of ID_Stage.v was successful.
+# Compile of arm_processor.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of arm_processor.v failed with 1 errors.
+# Compile of arm_processor.v failed with 1 errors.
 # Compile of arm_processor.v was successful.
-vsim -gui work.ARM
-# vsim -gui work.ARM 
-# Start time: 15:48:50 on Apr 11,2022
-# Loading work.ARM
-# Loading work.IF_Stage
-# Loading work.InstructionMemory
-# Loading work.IF_Stage_Reg
-# Loading work.ID_Stage
-# Loading work.ID_Stage_Reg
-# Loading work.EXE_Stage
-# Loading work.EXE_Stage_Reg
-# Loading work.MEM_Stage
-# Loading work.MEM_Stage_Reg
-# Loading work.WB_Stage
-# ** Error: (vsim-3063) Port 'BranchAddr' not found in the connected module (5th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /ARM/if_stage File: E:/UT/S6/CALab/arm_processor.v Line: 22
-# ** Error (suppressible): (vsim-3053) Illegal output or inout port connection for port 'Instruction'.
-#    Time: 0 ps  Iteration: 0  Instance: /ARM/if_stage/int_mem File: E:/UT/S6/CALab/IF_Stage.v Line: 15
-# Error loading design
-# End time: 15:48:50 on Apr 11,2022, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 2
-# Compile of IF_Stage.v was successful.
-# Compile of arm_processor.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.ARM
-# vsim -gui work.ARM 
-# Start time: 15:49:43 on Apr 11,2022
-# Loading work.ARM
-# Loading work.IF_Stage
-# Loading work.InstructionMemory
-# Loading work.IF_Stage_Reg
-# Loading work.ID_Stage
-# Loading work.ID_Stage_Reg
-# Loading work.EXE_Stage
-# Loading work.EXE_Stage_Reg
-# Loading work.MEM_Stage
-# Loading work.MEM_Stage_Reg
-# Loading work.WB_Stage
-# ** Error (suppressible): (vsim-3053) Illegal output or inout port connection for port 'Instruction'.
-#    Time: 0 ps  Iteration: 0  Instance: /ARM/if_stage/int_mem File: E:/UT/S6/CALab/IF_Stage.v Line: 15
-# Error loading design
-# End time: 15:49:43 on Apr 11,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 2
-# Compile of IF_Stage.v failed with 2 errors.
-# Compile of IF_Stage_Reg.v was successful.
-# 2 compiles, 1 failed with 2 errors.
-# Load canceled
-# Compile of IF_Stage.v failed with 2 errors.
-# Compile of IF_Stage.v failed with 2 errors.
-# Compile of IF_Stage.v was successful.
-vsim -gui work.ARM
-# vsim -gui work.ARM 
-# Start time: 16:00:46 on Apr 11,2022
-# Loading work.ARM
-# Loading work.IF_Stage
-# Loading work.InstructionMemory
-# Loading work.IF_Stage_Reg
-# Loading work.ID_Stage
-# Loading work.ID_Stage_Reg
-# Loading work.EXE_Stage
-# Loading work.EXE_Stage_Reg
-# Loading work.MEM_Stage
-# Loading work.MEM_Stage_Reg
-# Loading work.WB_Stage
-add wave -position end  sim:/ARM/Branch_taken
-add wave -position end  sim:/ARM/BranchAddr
-add wave -position end  sim:/ARM/clk
-add wave -position end  sim:/ARM/flub
-add wave -position end  sim:/ARM/flush
-add wave -position end  sim:/ARM/freeze
-add wave -position end  sim:/ARM/PC_EX
-add wave -position end  sim:/ARM/PC_EX_Reg
-add wave -position end  sim:/ARM/PC_ID
-add wave -position end  sim:/ARM/PC_ID_Reg
-add wave -position end  sim:/ARM/PC_IF
-add wave -position end  sim:/ARM/PC_IF_Reg
-add wave -position end  sim:/ARM/PC_MEM
-add wave -position end  sim:/ARM/PC_MEM_Reg
-add wave -position end  sim:/ARM/PC_WB
-add wave -position end  sim:/ARM/rst
-run -all
-# Break key hit
-# Break key hit
-quit -sim
-# End time: 16:01:26 on Apr 11,2022, Elapsed time: 0:00:40
-# Errors: 0, Warnings: 5
-# Compile of TB.v failed with 1 errors.
-# Compile of TB.v was successful.
-# Compile of TB.v was successful.
 vsim -gui work.TB
 # vsim -gui work.TB 
-# Start time: 16:05:08 on Apr 11,2022
+# Start time: 14:53:37 on Apr 12,2022
 # Loading work.TB
 # Loading work.ARM
 # Loading work.IF_Stage
 # Loading work.InstructionMemory
 # Loading work.IF_Stage_Reg
 # Loading work.ID_Stage
+# ** Error: (vsim-3033) Instantiation of 'ControlUnit' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /TB/arm/id_stage File: E:/UT/S6/CALab/ID_Stage.v Line: 33
+#         Searched libraries:
+#             E:/UT/S6/CALab/arm
+# ** Error: (vsim-3033) Instantiation of 'RegisterFile' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /TB/arm/id_stage File: E:/UT/S6/CALab/ID_Stage.v Line: 57
+#         Searched libraries:
+#             E:/UT/S6/CALab/arm
+# ** Error: (vsim-3033) Instantiation of 'Condition_Check' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /TB/arm/id_stage File: E:/UT/S6/CALab/ID_Stage.v Line: 75
+#         Searched libraries:
+#             E:/UT/S6/CALab/arm
 # Loading work.ID_Stage_Reg
 # Loading work.EXE_Stage
 # Loading work.EXE_Stage_Reg
 # Loading work.MEM_Stage
 # Loading work.MEM_Stage_Reg
 # Loading work.WB_Stage
-add wave -position end  sim:/TB/arm/Branch_taken
-add wave -position end  sim:/TB/arm/BranchAddr
-add wave -position end  sim:/TB/arm/clk
-add wave -position end  sim:/TB/arm/flub
-add wave -position end  sim:/TB/arm/flush
-add wave -position end  sim:/TB/arm/freeze
-add wave -position end  sim:/TB/arm/instruction_IF
-add wave -position end  sim:/TB/arm/instruction_IF_Reg
-add wave -position end  sim:/TB/arm/PC_EX
-add wave -position end  sim:/TB/arm/PC_EX_Reg
-add wave -position end  sim:/TB/arm/PC_ID
-add wave -position end  sim:/TB/arm/PC_ID_Reg
-add wave -position end  sim:/TB/arm/PC_IF
-add wave -position end  sim:/TB/arm/PC_IF_Reg
-add wave -position end  sim:/TB/arm/PC_MEM
-add wave -position end  sim:/TB/arm/PC_MEM_Reg
-add wave -position end  sim:/TB/arm/PC_WB
-add wave -position end  sim:/TB/arm/rst
-run -all
-add wave -position 5  sim:/TB/arm/instruction_IF
-add wave -position 6  sim:/TB/arm/instruction_IF_Reg
-# Compile of arm_processor.v was successful.
-# Break key hit
-# Simulation stop requested.
-restart -f
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.ARM
-# Compile of TB.v was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Error loading design
+# End time: 14:53:38 on Apr 12,2022, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 8
+# Compile of Condition_Check.v failed with 1 errors.
+# Compile of ControlUnit.v failed with 2 errors.
+# Compile of RegisterFile.v failed with 3 errors.
+# 3 compiles, 3 failed with 6 errors.
+# Compile of Condition_Check.v was successful.
+# Compile of ControlUnit.v failed with 2 errors.
+# Compile of RegisterFile.v failed with 3 errors.
+# 3 compiles, 2 failed with 5 errors.
+# Compile of ControlUnit.v was successful.
+# Compile of RegisterFile.v failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile.v was successful.
+vsim -gui work.TB
+# vsim -gui work.TB 
+# Start time: 14:56:13 on Apr 12,2022
 # Loading work.TB
-run -all
-# ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
-#    Time: 1250 ps  Iteration: 0  Instance: /TB
-# Break in Module TB at E:/UT/S6/CALab/TB.v line 14
-add wave -position end  sim:/TB/arm/if_stage/Instruction
-add wave -position end  sim:/TB/arm/if_stage/PC
-add wave -position end  sim:/TB/arm/if_stage/int_mem/memory
-restart -f
-run -all
-# ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
-#    Time: 1250 ps  Iteration: 0  Instance: /TB
-# Break in Module TB at E:/UT/S6/CALab/TB.v line 14
-add wave -position 15  sim:/TB/arm/if_stage/int_mem/Instruction
-add wave -position end  sim:/TB/arm/if_stage/int_mem/instructions
-# Compile of IF_Stage.v was successful.
-# Compile of Instruction_Memory.v was successful.
-# 2 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.ARM
 # Loading work.IF_Stage
 # Loading work.InstructionMemory
-# Warning in wave window restart: (vish-4014) No objects found matching '/TB/arm/if_stage/int_mem/Instruction'. 
-# Warning in wave window restart: (vish-4014) No objects found matching '/TB/arm/if_stage/int_mem/memory'. 
+# Loading work.IF_Stage_Reg
+# Loading work.ID_Stage
+# Loading work.ControlUnit
+# Loading work.RegisterFile
+# Loading work.Condition_Check
+# Loading work.ID_Stage_Reg
+# Loading work.EXE_Stage
+# Loading work.EXE_Stage_Reg
+# Loading work.MEM_Stage
+# Loading work.MEM_Stage_Reg
+# Loading work.WB_Stage
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'VAL_Rm_in'. The port definition is at: E:/UT/S6/CALab/ID_Stage_Reg.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /TB/arm/id_stage_reg File: E:/UT/S6/CALab/arm_processor.v Line: 69
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'VAL_Rm'. The port definition is at: E:/UT/S6/CALab/ID_Stage_Reg.v(23).
+#    Time: 0 ps  Iteration: 0  Instance: /TB/arm/id_stage_reg File: E:/UT/S6/CALab/arm_processor.v Line: 69
+quit -sim
+# End time: 14:58:08 on Apr 12,2022, Elapsed time: 0:01:55
+# Errors: 0, Warnings: 9
+vsim -gui work.TB
+# vsim -gui work.TB 
+# Start time: 14:58:18 on Apr 12,2022
+# Loading work.TB
+# Loading work.ARM
+# Loading work.IF_Stage
+# Loading work.InstructionMemory
+# Loading work.IF_Stage_Reg
+# Loading work.ID_Stage
+# Loading work.ControlUnit
+# Loading work.RegisterFile
+# Loading work.Condition_Check
+# Loading work.ID_Stage_Reg
+# Loading work.EXE_Stage
+# Loading work.EXE_Stage_Reg
+# Loading work.MEM_Stage
+# Loading work.MEM_Stage_Reg
+# Loading work.WB_Stage
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'VAL_Rm_in'. The port definition is at: E:/UT/S6/CALab/ID_Stage_Reg.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /TB/arm/id_stage_reg File: E:/UT/S6/CALab/arm_processor.v Line: 69
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'VAL_Rm'. The port definition is at: E:/UT/S6/CALab/ID_Stage_Reg.v(23).
+#    Time: 0 ps  Iteration: 0  Instance: /TB/arm/id_stage_reg File: E:/UT/S6/CALab/arm_processor.v Line: 69
+quit -sim
+# End time: 14:59:34 on Apr 12,2022, Elapsed time: 0:01:16
+# Errors: 0, Warnings: 3
+vsim -gui work.TB
+# vsim -gui work.TB 
+# Start time: 14:59:42 on Apr 12,2022
+# Loading work.TB
+# Loading work.ARM
+# Loading work.IF_Stage
+# Loading work.InstructionMemory
+# Loading work.IF_Stage_Reg
+# Loading work.ID_Stage
+# Loading work.ControlUnit
+# Loading work.RegisterFile
+# Loading work.Condition_Check
+# Loading work.ID_Stage_Reg
+# Loading work.EXE_Stage
+# Loading work.EXE_Stage_Reg
+# Loading work.MEM_Stage
+# Loading work.MEM_Stage_Reg
+# Loading work.WB_Stage
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'VAL_Rm_in'. The port definition is at: E:/UT/S6/CALab/ID_Stage_Reg.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /TB/arm/id_stage_reg File: E:/UT/S6/CALab/arm_processor.v Line: 69
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'VAL_Rm'. The port definition is at: E:/UT/S6/CALab/ID_Stage_Reg.v(23).
+#    Time: 0 ps  Iteration: 0  Instance: /TB/arm/id_stage_reg File: E:/UT/S6/CALab/arm_processor.v Line: 69
+# Compile of arm_processor.v was successful.
+quit -sim
+# End time: 15:01:58 on Apr 12,2022, Elapsed time: 0:02:16
+# Errors: 0, Warnings: 4
+vsim -gui work.TB
+# vsim -gui work.TB 
+# Start time: 15:02:05 on Apr 12,2022
+# Loading work.TB
+# Loading work.ARM
+# Loading work.IF_Stage
+# Loading work.InstructionMemory
+# Loading work.IF_Stage_Reg
+# Loading work.ID_Stage
+# Loading work.ControlUnit
+# Loading work.RegisterFile
+# Loading work.Condition_Check
+# Loading work.ID_Stage_Reg
+# Loading work.EXE_Stage
+# Loading work.EXE_Stage_Reg
+# Loading work.MEM_Stage
+# Loading work.MEM_Stage_Reg
+# Loading work.WB_Stage
 run -all
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '.' in data on line 8 of file "instructions.mem".    : E:/UT/S6/CALab/instruction_memory.v(9)
+#    Time: 150 ps  Iteration: 1  Instance: /TB/arm/if_stage/inst_mem
 # ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
-#    Time: 1250 ps  Iteration: 0  Instance: /TB
+#    Time: 10250 ps  Iteration: 0  Instance: /TB
 # Break in Module TB at E:/UT/S6/CALab/TB.v line 14
-add wave -position end  sim:/TB/arm/if_stage/PC_reg
-# Compile of TB.v was successful.
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.TB
+add wave -position end  sim:/TB/arm/B_reg
+add wave -position end  sim:/TB/arm/clk
+add wave -position end  sim:/TB/arm/Dest_reg
+add wave -position end  sim:/TB/arm/EXE_CMD_reg
+add wave -position end  sim:/TB/arm/instruction_IF
+add wave -position end  sim:/TB/arm/S_reg
+add wave -position end  sim:/TB/arm/Shift_operand_reg
+add wave -position end  sim:/TB/arm/Signed_imm_24_reg
+add wave -position end  sim:/TB/arm/status_register
+add wave -position end  sim:/TB/arm/Val_Rm_reg
+add wave -position end  sim:/TB/arm/Val_Rn_reg
+add wave -position end  sim:/TB/arm/WB_EN_reg
+run -all
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '.' in data on line 8 of file "instructions.mem".    : E:/UT/S6/CALab/instruction_memory.v(9)
+#    Time: 150 ps  Iteration: 1  Instance: /TB/arm/if_stage/inst_mem
+# ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
+#    Time: 10250 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/UT/S6/CALab/TB.v line 14
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Warning: (vsim-PLI-3406) Too many digits (33) in data on line 10 of file "instructions.mem". (Max is 32.)    : E:/UT/S6/CALab/instruction_memory.v(9)
+#    Time: 150 ps  Iteration: 1  Instance: /TB/arm/if_stage/inst_mem
+# ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
+#    Time: 10250 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/UT/S6/CALab/TB.v line 14
+add wave -position end  sim:/TB/arm/PC_IF
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Warning: (vsim-PLI-3406) Too many digits (33) in data on line 10 of file "instructions.mem". (Max is 32.)    : E:/UT/S6/CALab/instruction_memory.v(9)
+#    Time: 150 ps  Iteration: 1  Instance: /TB/arm/if_stage/inst_mem
+# ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
+#    Time: 10250 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/UT/S6/CALab/TB.v line 14
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run -all
 # ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
 #    Time: 10250 ps  Iteration: 0  Instance: /TB
 # Break in Module TB at E:/UT/S6/CALab/TB.v line 14
-add wave -position end  sim:/TB/arm/if_stage/freeze
-add wave -position end  sim:/TB/arm/if_stage/Branch_taken
-# Compile of IF_Stage.v was successful.
+add wave -position end  sim:/TB/arm/id_stage/register_file/data
+restart -f
+run -all
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '.' in data on line 19 of file "instructions.mem".    : E:/UT/S6/CALab/instruction_memory.v(9)
+#    Time: 150 ps  Iteration: 1  Instance: /TB/arm/if_stage/inst_mem
+# ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
+#    Time: 10250 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/UT/S6/CALab/TB.v line 14
+add wave -position end  sim:/TB/arm/id_stage/WB_EN
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.IF_Stage
 run -all
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '.' in data on line 19 of file "instructions.mem".    : E:/UT/S6/CALab/instruction_memory.v(9)
+#    Time: 150 ps  Iteration: 1  Instance: /TB/arm/if_stage/inst_mem
+# ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
+#    Time: 10250 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/UT/S6/CALab/TB.v line 14
+add wave -position end  sim:/TB/arm/MEM_R_EN_reg
+add wave -position end  sim:/TB/arm/MEM_W_EN_reg
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '.' in data on line 19 of file "instructions.mem".    : E:/UT/S6/CALab/instruction_memory.v(9)
+#    Time: 150 ps  Iteration: 1  Instance: /TB/arm/if_stage/inst_mem
+# ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
+#    Time: 10250 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/UT/S6/CALab/TB.v line 14
+add wave -position end  sim:/TB/arm/id_stage/register_file/src1
+add wave -position end  sim:/TB/arm/id_stage/register_file/src2
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '.' in data on line 19 of file "instructions.mem".    : E:/UT/S6/CALab/instruction_memory.v(9)
+#    Time: 150 ps  Iteration: 1  Instance: /TB/arm/if_stage/inst_mem
+# ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
+#    Time: 10250 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/UT/S6/CALab/TB.v line 14
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Break key hit
+run -all
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '.' in data on line 19 of file "instructions.mem".    : E:/UT/S6/CALab/instruction_memory.v(9)
+#    Time: 150 ps  Iteration: 1  Instance: /TB/arm/if_stage/inst_mem
 # ** Note: $stop    : E:/UT/S6/CALab/TB.v(14)
 #    Time: 10250 ps  Iteration: 0  Instance: /TB
 # Break in Module TB at E:/UT/S6/CALab/TB.v line 14

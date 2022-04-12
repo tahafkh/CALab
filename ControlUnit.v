@@ -67,7 +67,7 @@ module ControlUnit(
 					`OR  : begin
 						WB_EN = 1'b1;
 						S = s;
-						exe_cmd = `ORR;
+						exe_cmd = `OR;
 					end
 
 					`EOR : begin

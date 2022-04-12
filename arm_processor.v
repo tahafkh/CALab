@@ -68,13 +68,13 @@ module ARM(input clk, rst);
 
 	ID_Stage_Reg id_stage_reg(
 		.clk(clk), .rst(rst), .flush(flush), 
-		.PC_in(PC_ID), .PC(PC_ID_Reg)
+		.PC_in(PC_ID), .PC(PC_ID_Reg),
 
-		.MEM_R_EN_in(MEM_R_EN), .MEM_W_EN_in(MEM_W_EN), .WB_EN_in,(WB_EN)
+		.MEM_R_EN_in(MEM_R_EN), .MEM_W_EN_in(MEM_W_EN), .WB_EN_in(WB_EN),
 		.B_in(B), .S_in(S),
 		.EXE_CMD_in(EXE_CMD),
 
-		.VAL_Rn_in(Val_Rn), .VAL_Rm_in(VAL_Rm),
+		.VAL_Rn_in(Val_Rn), .VAL_Rm_in(Val_Rm),
 
 		.Dest_in(Dest),
 		.Signed_imm_in(Signed_imm_24),
@@ -83,11 +83,11 @@ module ARM(input clk, rst);
 
 		.status_register_in(status_register),
 
-		.MEM_R_EN(MEM_R_EN_reg), .MEM_W_EN(MEM_W_EN_reg), .WB_EN,(WB_EN_reg)
+		.MEM_R_EN(MEM_R_EN_reg), .MEM_W_EN(MEM_W_EN_reg), .WB_EN(WB_EN_reg),
 		.B(B_reg), .S(S_reg),
 		.EXE_CMD(EXE_CMD_reg),
 
-		.VAL_Rn(Val_Rn_reg), .VAL_Rm(VAL_Rm_reg),
+		.VAL_Rn(Val_Rn_reg), .VAL_Rm(Val_Rm_reg),
 
 		.Dest(Dest_reg),
 		.Signed_imm(Signed_imm_24_reg),
