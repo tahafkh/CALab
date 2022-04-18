@@ -12,13 +12,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	WB_Stage
 
-} {} {}} E:/UT/S6/CALab/EXE_Stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/EXE_Stage.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module EXE_Stage
-
-Top level modules:
-	EXE_Stage
-
 } {} {}} E:/UT/S6/CALab/ID_Stage_Reg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/ID_Stage_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ID_Stage_Reg
@@ -75,19 +68,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	MEM_Stage
 
-} {} {}} E:/UT/S6/CALab/arm_processor.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/arm_processor.v
+} {} {}} E:/UT/S6/CALab/RegisterFile.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/RegisterFile.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ARM
+-- Compiling module RegisterFile
 
 Top level modules:
-	ARM
-
-} {} {}} E:/UT/S6/CALab/ControlUnit.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/ControlUnit.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ControlUnit
-
-Top level modules:
-	ControlUnit
+	RegisterFile
 
 } {} {}} E:/UT/S6/CALab/WB_Stage_Reg.v {1 {vlog -work work -stats=none {E:\UT\S6\CALab\WB_Stage_Reg.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -96,11 +82,16 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	WB_Stage_Reg
 
-} {} {}} E:/UT/S6/CALab/EXE_Stage_Reg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/EXE_Stage_Reg.v
+} {} {}} E:/UT/S6/CALab/ControlUnit.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/ControlUnit.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module EXE_Stage_Reg
+-- Compiling module ControlUnit
 
 Top level modules:
-	EXE_Stage_Reg
+	ControlUnit
 
-} {} {}}
+} {} {}} E:/UT/S6/CALab/EXE_Stage_Reg.v {0 {vlog -work work -stats=none E:/UT/S6/CALab/EXE_Stage_Reg.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module EXE_Stage_Reg
+** Error: (vlog-13069) E:/UT/S6/CALab/EXE_Stage_Reg.v(21): near ",": syntax error, unexpected ',', expecting ';'.
+
+} {4.0 5.0} {}}

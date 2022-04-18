@@ -14,7 +14,7 @@ module ARM(input clk, rst);
 
 	assign Branch_taken = 1'd0;
 	assign freeze = 1'd0;
-	assign BranchAddr = 32'd0;
+	// assign BranchAddr = 32'd0;
     assign flush = 1'd0;
 	assign hazard = 1'b0;
 
@@ -64,7 +64,7 @@ module ARM(input clk, rst);
 		);
 
 	wire [3:0] status_register;
-	assign status_register = 'd0;
+	// assign status_register = 'd0;
 
 	ID_Stage_Reg id_stage_reg(
 		.clk(clk), .rst(rst), .flush(flush), 
@@ -99,9 +99,38 @@ module ARM(input clk, rst);
 
     //---------------Execution---------------\\
 
-	EXE_Stage exe_stage(.clk(clk), .rst(rst), .PC_in(PC_ID_Reg), .PC(PC_EX));
+	wire [32 - 1 : 0] ALU_Res, ALU_Res_reg;
+	
 
-	EXE_Stage_Reg exe_stage_reg(.clk(clk), .rst(rst), .PC_in(PC_EX), .PC(PC_EX_Reg));
+	EXE_Stage exe_stage(
+		.clk(clk),
+		.rst(rst),
+		.S(S_reg), .MEM_R_EN(MEM_R_EN_reg), .MEM_W_EN(MEM_W_EN_reg), .WB_EN(WB_EN_reg),
+		.PC_in(PC_ID_Reg),
+		.EXE_CMD(EXE_CMD_reg),
+		.immediate(imm_reg),
+		.signed_imm_24(Signed_imm_24_reg),
+		.shift_operand_in(Shift_operand_reg),
+		.Val1(Val_Rn_reg), .Val_Rm(Val_Rm_reg),
+		.status_register_in(), 
+		// .status_register_out(),
+		.PC(PC_EX),
+		.status_bits(status_register),
+		.ALU_Res(ALU_Res),
+		.branch_address(BranchAddr)
+	);
+
+	exe_stage_reg (
+	.clk(clk), .rst(rst), .PC_in(PC_EX), .PC(PC_EX_Reg),
+	.WB_EN_IN(WB_EN_reg), .MEM_R_IN(MEM_R_EN_reg), .MEM_W_IN(MEM_W_EN_reg),
+	.ALU_Res_in(ALU_Res), .Val_Rm_in(),
+	input [4 - 1 : 0] Dest_in,
+
+	output reg[32 - 1 : 0] PC,
+	output reg WB_EN, MEM_R_EN, MEM_W_EN,
+	output reg [32 - 1 : 0] ALU_Res, Val_Rm,
+	output reg [4 - 1 : 0] Dest
+);
 
     //---------------Memory---------------\\
 

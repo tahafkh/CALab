@@ -1,9 +1,9 @@
 module StatusRegister(
-    input clk;
-    input rst;
-    input ld;
-    input [3:0] in;
-    output reg [3:0] out;
+    input clk,
+    input rst,
+    input ld,
+    input [3:0] in,
+    output reg [3:0] out
 );
     always@(negedge clk, posedge rst) begin
 		if (rst) 
