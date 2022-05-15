@@ -1,0 +1,176 @@
+{C:/Users/WIN10/Desktop/New Folder/ForwardingUnit.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ForwardingUnit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ForwardingUnit
+
+Top level modules:
+	ForwardingUnit
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/MEM_reg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/MEM_reg.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MEM_reg
+
+Top level modules:
+	MEM_reg
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/RegisterFile.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/RegisterFile.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/EXE_stage.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/EXE_stage.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module EXE_stage
+
+Top level modules:
+	EXE_stage
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/alutb.v} {1 {vlog -work work -stats=none {C:\Users\WIN10\Desktop\New Folder\alutb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alutb
+
+Top level modules:
+	alutb
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/MEM_stage.v} {1 {vlog -work work -stats=none {C:\Users\WIN10\Desktop\New Folder\MEM_stage.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MEM_stage
+
+Top level modules:
+	MEM_stage
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/ID_reg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ID_reg.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ID_Reg
+
+Top level modules:
+	ID_Reg
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/instructionMemory.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/instructionMemory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module InstructionMemory
+
+Top level modules:
+	InstructionMemory
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/WB_stage.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/WB_stage.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module WB_stage
+
+Top level modules:
+	WB_stage
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/IF_reg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/IF_reg.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IF_reg
+
+Top level modules:
+	IF_reg
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/ConditionCheck.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ConditionCheck.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ConditionCheck
+
+Top level modules:
+	ConditionCheck
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/TB.v} {1 {vlog -work work -stats=none {C:\Users\WIN10\Desktop\New Folder\TB.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb
+
+Top level modules:
+	tb
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/EXE_reg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/EXE_reg.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module EXE_reg
+
+Top level modules:
+	EXE_reg
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/Val2Gen.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/Val2Gen.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Val2Gen
+
+Top level modules:
+	Val2Gen
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/ARM.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ARM.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ARM
+
+Top level modules:
+	ARM
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/ID_stage.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ID_stage.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ID_stage
+
+Top level modules:
+	ID_stage
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/Test.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/Test.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Test
+
+Top level modules:
+	Test
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/ControlUnit.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ControlUnit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ControlUnit
+
+Top level modules:
+	ControlUnit
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/HazardDetection.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/HazardDetection.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module HazardDetection
+
+Top level modules:
+	HazardDetection
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/Memory.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/Memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Memory
+
+Top level modules:
+	Memory
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/PCReg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/PCReg.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC_reg
+
+Top level modules:
+	PC_reg
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/ALU.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ALU.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/IF_stage.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/IF_stage.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IF_stage
+
+Top level modules:
+	IF_stage
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/mux.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/mux.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux2_32
+
+Top level modules:
+	mux2_32
+
+} {} {}} {C:/Users/WIN10/Desktop/New Folder/StatusReg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/StatusReg.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module StatusReg
+
+Top level modules:
+	StatusReg
+
+} {} {}}
