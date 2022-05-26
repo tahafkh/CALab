@@ -3,7 +3,7 @@ module ALU(
     input signed [31:0] val1, val2,
     input [3:0] exe_cmd,
     input c,
-    output reg [3:0] status_out,
+    output [3:0] status_out,
     output reg signed [31:0] out
 );
 

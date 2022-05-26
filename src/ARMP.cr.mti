@@ -1,176 +1,190 @@
-{C:/Users/WIN10/Desktop/New Folder/ForwardingUnit.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ForwardingUnit.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ForwardingUnit
-
-Top level modules:
-	ForwardingUnit
-
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/MEM_reg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/MEM_reg.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module MEM_reg
-
-Top level modules:
-	MEM_reg
-
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/RegisterFile.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/RegisterFile.v}
+E:/UT/S6/CALab/src/RegisterFile.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/RegisterFile.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module RegisterFile
 
 Top level modules:
 	RegisterFile
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/EXE_stage.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/EXE_stage.v}
+} {} {}} E:/UT/S6/CALab/src/EXE_stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/EXE_stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module EXE_stage
 
 Top level modules:
 	EXE_stage
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/alutb.v} {1 {vlog -work work -stats=none {C:\Users\WIN10\Desktop\New Folder\alutb.v}
+} {} {}} E:/UT/S6/CALab/src/reg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/reg.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} E:/UT/S6/CALab/src/alutb.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/alutb.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module alutb
 
 Top level modules:
 	alutb
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/MEM_stage.v} {1 {vlog -work work -stats=none {C:\Users\WIN10\Desktop\New Folder\MEM_stage.v}
+} {} {}} E:/UT/S6/CALab/src/MEM_stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/MEM_stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module MEM_stage
 
 Top level modules:
 	MEM_stage
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/ID_reg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ID_reg.v}
+} {} {}} E:/UT/S6/CALab/src/ID_reg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/ID_reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ID_Reg
 
 Top level modules:
 	ID_Reg
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/instructionMemory.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/instructionMemory.v}
+} {} {}} E:/UT/S6/CALab/src/SRAM.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/SRAM.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SRAM
+
+Top level modules:
+	SRAM
+
+} {} {}} E:/UT/S6/CALab/src/instructionMemory.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/instructionMemory.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module InstructionMemory
 
 Top level modules:
 	InstructionMemory
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/WB_stage.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/WB_stage.v}
+} {} {}} E:/UT/S6/CALab/src/WB_stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/WB_stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module WB_stage
 
 Top level modules:
 	WB_stage
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/IF_reg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/IF_reg.v}
+} {} {}} E:/UT/S6/CALab/src/IF_reg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/IF_reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module IF_reg
 
 Top level modules:
 	IF_reg
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/ConditionCheck.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ConditionCheck.v}
+} {} {}} E:/UT/S6/CALab/src/ConditionCheck.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/ConditionCheck.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ConditionCheck
 
 Top level modules:
 	ConditionCheck
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/TB.v} {1 {vlog -work work -stats=none {C:\Users\WIN10\Desktop\New Folder\TB.v}
+} {} {}} E:/UT/S6/CALab/src/TB.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module tb
 
 Top level modules:
 	tb
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/EXE_reg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/EXE_reg.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module EXE_reg
-
-Top level modules:
-	EXE_reg
-
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/Val2Gen.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/Val2Gen.v}
+} {} {}} E:/UT/S6/CALab/src/Val2Gen.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/Val2Gen.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Val2Gen
 
 Top level modules:
 	Val2Gen
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/ARM.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ARM.v}
+} {} {}} E:/UT/S6/CALab/src/EXE_reg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/EXE_reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ARM
+-- Compiling module EXE_reg
 
 Top level modules:
-	ARM
+	EXE_reg
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/ID_stage.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ID_stage.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ID_stage
-
-Top level modules:
-	ID_stage
-
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/Test.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/Test.v}
+} {} {}} E:/UT/S6/CALab/src/Test.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/Test.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Test
 
 Top level modules:
 	Test
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/ControlUnit.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ControlUnit.v}
+} {} {}} E:/UT/S6/CALab/src/ARM.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/ARM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ControlUnit
+-- Compiling module ARM
 
 Top level modules:
-	ControlUnit
+	ARM
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/HazardDetection.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/HazardDetection.v}
+} {} {}} E:/UT/S6/CALab/src/ID_stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module HazardDetection
+-- Compiling module tb
 
 Top level modules:
-	HazardDetection
+	tb
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/Memory.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/Memory.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Memory
-
-Top level modules:
-	Memory
-
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/PCReg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/PCReg.v}
+} {} {}} E:/UT/S6/CALab/src/PCReg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/PCReg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module PC_reg
 
 Top level modules:
 	PC_reg
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/ALU.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/ALU.v}
+} {} {}} E:/UT/S6/CALab/src/Memory.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/Memory.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ALU
+-- Compiling module Memory
 
 Top level modules:
-	ALU
+	Memory
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/IF_stage.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/IF_stage.v}
+} {} {}} E:/UT/S6/CALab/src/HazardDetection.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/HazardDetection.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module IF_stage
+-- Compiling module HazardDetection
 
 Top level modules:
-	IF_stage
+	HazardDetection
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/mux.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/mux.v}
+} {} {}} E:/UT/S6/CALab/src/ControlUnit.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/ControlUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ControlUnit
+
+Top level modules:
+	ControlUnit
+
+} {} {}} E:/UT/S6/CALab/src/StatusReg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/StatusReg.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module StatusReg
+
+Top level modules:
+	StatusReg
+
+} {} {}} E:/UT/S6/CALab/src/mux.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/mux.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module mux2_32
 
 Top level modules:
 	mux2_32
 
-} {} {}} {C:/Users/WIN10/Desktop/New Folder/StatusReg.v} {1 {vlog -work work -stats=none {C:/Users/WIN10/Desktop/New Folder/StatusReg.v}
+} {} {}} E:/UT/S6/CALab/src/IF_stage.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/IF_stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module StatusReg
+-- Compiling module IF_stage
 
 Top level modules:
-	StatusReg
+	IF_stage
+
+} {} {}} E:/UT/S6/CALab/src/ALU.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} E:/UT/S6/CALab/src/ForwardingUnit.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/ForwardingUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ForwardingUnit
+
+Top level modules:
+	ForwardingUnit
+
+} {} {}} E:/UT/S6/CALab/src/MEM_reg.v {1 {vlog -work work -stats=none E:/UT/S6/CALab/src/MEM_reg.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MEM_reg
+
+Top level modules:
+	MEM_reg
 
 } {} {}}

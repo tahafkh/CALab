@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 module ID_Reg (
-  input clk, rst, flush,
+  input clk, rst, ld, flush,
   input WB_EN_IN, MEM_R_EN_IN, MEM_W_EN_IN,
   input B_IN, S_IN, C_IN,
   input [3:0] EXE_CMD_IN, src1_in, src2_in,
@@ -58,7 +58,7 @@ module ID_Reg (
       src1_out <= 4'd0;
       src2_out <= 4'd0;
     end
-    else begin
+    else if (ld) begin
       WB_EN <= WB_EN_IN;
       MEM_R_EN <= MEM_R_EN_IN;
       MEM_W_EN <= MEM_W_EN_IN;

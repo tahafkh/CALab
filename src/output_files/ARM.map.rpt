@@ -1,0 +1,895 @@
+Analysis & Synthesis report for ARM
+Tue May 24 11:08:57 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ARM|MEM_stage:mem_stage|SRAMController:sramCtrl|ps
+  9. Logic Cells Representing Combinational Loops
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: ID_stage:id_stage|ControlUnit:CtrlUnit
+ 15. Parameter Settings for User Entity Instance: ID_stage:id_stage|ConditionCheck:CondCheck
+ 16. Parameter Settings for User Entity Instance: EXE_stage:exe_stage|ALU:alu
+ 17. Parameter Settings for User Entity Instance: EXE_stage:exe_stage|Val2Gen:val2gen
+ 18. Parameter Settings for User Entity Instance: MEM_stage:mem_stage|SRAMController:sramCtrl
+ 19. Parameter Settings for User Entity Instance: MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg
+ 20. Parameter Settings for User Entity Instance: MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2
+ 21. Port Connectivity Checks: "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg"
+ 22. Port Connectivity Checks: "MEM_stage:mem_stage"
+ 23. Port Connectivity Checks: "IF_reg:if_reg"
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue May 24 11:08:57 2022           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; ARM                                             ;
+; Top-level Entity Name              ; ARM                                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 2,938                                           ;
+;     Total combinational functions  ; 2,410                                           ;
+;     Dedicated logic registers      ; 783                                             ;
+; Total registers                    ; 783                                             ;
+; Total pins                         ; 38                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5F256C7        ;                    ;
+; Top-level entity name                                                      ; ARM                ; ARM                ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                         ;
++----------------------------------+-----------------+------------------------+----------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path           ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------+---------+
+; WB_stage.v                       ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/WB_stage.v          ;         ;
+; Val2Gen.v                        ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/Val2Gen.v           ;         ;
+; SRAMController.v                 ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/SRAMController.v    ;         ;
+; RegisterFile.v                   ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/RegisterFile.v      ;         ;
+; reg.v                            ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/reg.v               ;         ;
+; PCReg.v                          ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/PCReg.v             ;         ;
+; mux.v                            ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/mux.v               ;         ;
+; MEM_stage.v                      ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/MEM_stage.v         ;         ;
+; MEM_reg.v                        ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/MEM_reg.v           ;         ;
+; instructionMemory.v              ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/instructionMemory.v ;         ;
+; IF_stage.v                       ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/IF_stage.v          ;         ;
+; IF_reg.v                         ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/IF_reg.v            ;         ;
+; ID_stage.v                       ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/ID_stage.v          ;         ;
+; ID_reg.v                         ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/ID_reg.v            ;         ;
+; HazardDetection.v                ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/HazardDetection.v   ;         ;
+; ForwardingUnit.v                 ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/ForwardingUnit.v    ;         ;
+; EXE_stage.v                      ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/EXE_stage.v         ;         ;
+; EXE_reg.v                        ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/EXE_reg.v           ;         ;
+; ControlUnit.v                    ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/ControlUnit.v       ;         ;
+; ConditionCheck.v                 ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/ConditionCheck.v    ;         ;
+; ARM.v                            ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/ARM.v               ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File  ; E:/UT/S6/CALab/src/ALU.v               ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 2,938 ;
+;                                             ;       ;
+; Total combinational functions               ; 2410  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1757  ;
+;     -- 3 input functions                    ; 484   ;
+;     -- <=2 input functions                  ; 169   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 2262  ;
+;     -- arithmetic mode                      ; 148   ;
+;                                             ;       ;
+; Total registers                             ; 783   ;
+;     -- Dedicated logic registers            ; 783   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 38    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 783   ;
+; Total fan-out                               ; 12053 ;
+; Average fan-out                             ; 3.73  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------+
+; |ARM                                  ; 2410 (1)          ; 783 (0)      ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |ARM                                                                     ; work         ;
+;    |EXE_reg:exe_reg|                  ; 0 (0)             ; 71 (71)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|EXE_reg:exe_reg                                                     ; work         ;
+;    |EXE_stage:exe_stage|              ; 1409 (133)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|EXE_stage:exe_stage                                                 ; work         ;
+;       |ALU:alu|                       ; 423 (423)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|EXE_stage:exe_stage|ALU:alu                                         ; work         ;
+;       |Val2Gen:val2gen|               ; 853 (853)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|EXE_stage:exe_stage|Val2Gen:val2gen                                 ; work         ;
+;    |ForwardingUnit:forwarding_unit|   ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|ForwardingUnit:forwarding_unit                                      ; work         ;
+;    |HazardDetection:hazard_detection| ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|HazardDetection:hazard_detection                                    ; work         ;
+;    |ID_Reg:id_reg|                    ; 688 (688)         ; 103 (103)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|ID_Reg:id_reg                                                       ; work         ;
+;    |ID_stage:id_stage|                ; 74 (12)           ; 480 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|ID_stage:id_stage                                                   ; work         ;
+;       |ConditionCheck:CondCheck|      ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|ID_stage:id_stage|ConditionCheck:CondCheck                          ; work         ;
+;       |ControlUnit:CtrlUnit|          ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|ID_stage:id_stage|ControlUnit:CtrlUnit                              ; work         ;
+;       |RegisterFile:RegFile|          ; 49 (49)           ; 480 (480)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|ID_stage:id_stage|RegisterFile:RegFile                              ; work         ;
+;    |IF_stage:if_stage|                ; 127 (7)           ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|IF_stage:if_stage                                                   ; work         ;
+;       |InstructionMemory:instmem|     ; 113 (113)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|IF_stage:if_stage|InstructionMemory:instmem                         ; work         ;
+;       |PC_reg:pc_reg|                 ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|IF_stage:if_stage|PC_reg:pc_reg                                     ; work         ;
+;    |MEM_reg:mem_reg|                  ; 0 (0)             ; 70 (70)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|MEM_reg:mem_reg                                                     ; work         ;
+;    |MEM_stage:mem_stage|              ; 53 (1)            ; 52 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|MEM_stage:mem_stage                                                 ; work         ;
+;       |SRAMController:sramCtrl|       ; 52 (52)           ; 52 (4)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|MEM_stage:mem_stage|SRAMController:sramCtrl                         ; work         ;
+;          |register:read_data_reg2|    ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2 ; work         ;
+;          |register:read_data_reg|     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg  ; work         ;
+;    |WB_stage:wb_stage|                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ARM|WB_stage:wb_stage                                                   ; work         ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------+
+; State Machine - |ARM|MEM_stage:mem_stage|SRAMController:sramCtrl|ps ;
++----------+-------+---------+----------------------------------------+
+; Name     ; ps.00 ; ps.READ ; ps.WRITE                               ;
++----------+-------+---------+----------------------------------------+
+; ps.00    ; 0     ; 0       ; 0                                      ;
+; ps.WRITE ; 1     ; 0       ; 1                                      ;
+; ps.READ  ; 1     ; 1       ; 0                                      ;
++----------+-------+---------+----------------------------------------+
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; ID_stage:id_stage|before_mux_sel~0                     ;   ;
+; Number of logic cells representing combinational loops ; 1 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++------------------------------------------------------+---------------------------------------------+
+; Register name                                        ; Reason for Removal                          ;
++------------------------------------------------------+---------------------------------------------+
+; ID_Reg:id_reg|Signed_imm_24[11]                      ; Merged with ID_Reg:id_reg|Shift_operand[11] ;
+; ID_Reg:id_reg|Signed_imm_24[10]                      ; Merged with ID_Reg:id_reg|Shift_operand[10] ;
+; ID_Reg:id_reg|Signed_imm_24[9]                       ; Merged with ID_Reg:id_reg|Shift_operand[9]  ;
+; ID_Reg:id_reg|Signed_imm_24[8]                       ; Merged with ID_Reg:id_reg|Shift_operand[8]  ;
+; ID_Reg:id_reg|Signed_imm_24[7]                       ; Merged with ID_Reg:id_reg|Shift_operand[7]  ;
+; ID_Reg:id_reg|Signed_imm_24[6]                       ; Merged with ID_Reg:id_reg|Shift_operand[6]  ;
+; ID_Reg:id_reg|Signed_imm_24[5]                       ; Merged with ID_Reg:id_reg|Shift_operand[5]  ;
+; ID_Reg:id_reg|Signed_imm_24[4]                       ; Merged with ID_Reg:id_reg|Shift_operand[4]  ;
+; ID_Reg:id_reg|Signed_imm_24[3]                       ; Merged with ID_Reg:id_reg|Shift_operand[3]  ;
+; ID_Reg:id_reg|Signed_imm_24[2]                       ; Merged with ID_Reg:id_reg|Shift_operand[2]  ;
+; ID_Reg:id_reg|Signed_imm_24[1]                       ; Merged with ID_Reg:id_reg|Shift_operand[1]  ;
+; ID_Reg:id_reg|Signed_imm_24[0]                       ; Merged with ID_Reg:id_reg|Shift_operand[0]  ;
+; ID_Reg:id_reg|src1_out[3]                            ; Merged with ID_Reg:id_reg|Signed_imm_24[19] ;
+; ID_Reg:id_reg|src1_out[2]                            ; Merged with ID_Reg:id_reg|Signed_imm_24[18] ;
+; ID_Reg:id_reg|src1_out[1]                            ; Merged with ID_Reg:id_reg|Signed_imm_24[17] ;
+; ID_Reg:id_reg|src1_out[0]                            ; Merged with ID_Reg:id_reg|Signed_imm_24[16] ;
+; ID_Reg:id_reg|Dest[3]                                ; Merged with ID_Reg:id_reg|Signed_imm_24[15] ;
+; ID_Reg:id_reg|Dest[2]                                ; Merged with ID_Reg:id_reg|Signed_imm_24[14] ;
+; ID_Reg:id_reg|Dest[0]                                ; Merged with ID_Reg:id_reg|Signed_imm_24[12] ;
+; ID_Reg:id_reg|Dest[1]                                ; Merged with ID_Reg:id_reg|Signed_imm_24[13] ;
+; ID_Reg:id_reg|Shift_operand[5]                       ; Merged with ID_Reg:id_reg|Shift_operand[7]  ;
+; ID_Reg:id_reg|Shift_operand[11]                      ; Merged with ID_Reg:id_reg|Shift_operand[9]  ;
+; MEM_stage:mem_stage|SRAMController:sramCtrl|ps.WRITE ; Lost fanout                                 ;
+; MEM_stage:mem_stage|SRAMController:sramCtrl|ps.READ  ; Lost fanout                                 ;
+; ID_Reg:id_reg|Signed_imm_24[20..23]                  ; Lost fanout                                 ;
+; ID_Reg:id_reg|PC[9..31]                              ; Lost fanout                                 ;
+; Total Number of Removed Registers = 51               ;                                             ;
++------------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 783   ;
+; Number of registers using Synchronous Clear  ; 70    ;
+; Number of registers using Synchronous Load   ; 7     ;
+; Number of registers using Asynchronous Clear ; 783   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 765   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------+
+; Inverted Register Statistics                                   ;
++------------------------------------------------------+---------+
+; Inverted Register                                    ; Fan out ;
++------------------------------------------------------+---------+
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[7][2]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[4][2]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[6][2]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[5][2]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[13][2] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[12][2] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[14][2] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[6][1]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[7][1]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[2][1]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[3][1]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[10][1] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[11][1] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[14][1] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[5][0]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[7][0]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[1][0]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[3][0]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[9][0]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[11][0] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[13][0] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[13][3] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[10][3] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[9][3]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[8][3]  ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[11][3] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[12][3] ; 2       ;
+; ID_stage:id_stage|RegisterFile:RegFile|rf_arr[14][3] ; 2       ;
+; Total number of inverted registers = 28              ;         ;
++------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; 3:1                ; 61 bits   ; 122 LEs       ; 61 LEs               ; 61 LEs                 ; Yes        ; |ARM|ID_Reg:id_reg|PC[19]              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |ARM|ID_Reg:id_reg|EXE_CMD[3]          ;
+; 17:1               ; 32 bits   ; 352 LEs       ; 320 LEs              ; 32 LEs                 ; Yes        ; |ARM|ID_Reg:id_reg|Val_Rm[25]          ;
+; 17:1               ; 32 bits   ; 352 LEs       ; 320 LEs              ; 32 LEs                 ; Yes        ; |ARM|ID_Reg:id_reg|Val_Rn[16]          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ARM|EXE_stage:exe_stage|alu_val2[14]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ARM|EXE_stage:exe_stage|alu_val1[25]  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 6 LEs                ; 14 LEs                 ; No         ; |ARM|EXE_stage:exe_stage|ALU:alu|Mux32 ;
+; 16:1               ; 30 bits   ; 300 LEs       ; 180 LEs              ; 120 LEs                ; No         ; |ARM|EXE_stage:exe_stage|ALU:alu|Mux9  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_stage:id_stage|ControlUnit:CtrlUnit ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; NOP            ; 0000  ; Unsigned Binary                                            ;
+; MOV            ; 1101  ; Unsigned Binary                                            ;
+; MVN            ; 1111  ; Unsigned Binary                                            ;
+; ADD            ; 0100  ; Unsigned Binary                                            ;
+; ADC            ; 0101  ; Unsigned Binary                                            ;
+; SUB            ; 0010  ; Unsigned Binary                                            ;
+; SBC            ; 0110  ; Unsigned Binary                                            ;
+; AND            ; 0000  ; Unsigned Binary                                            ;
+; ORR            ; 1100  ; Unsigned Binary                                            ;
+; EOR            ; 0001  ; Unsigned Binary                                            ;
+; CMP            ; 1010  ; Unsigned Binary                                            ;
+; TST            ; 1000  ; Unsigned Binary                                            ;
+; LDR            ; 1     ; Unsigned Binary                                            ;
+; STR            ; 0     ; Unsigned Binary                                            ;
+; B              ; 10    ; Unsigned Binary                                            ;
+; ST_LD          ; 01    ; Unsigned Binary                                            ;
+; LOGIC          ; 00    ; Unsigned Binary                                            ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ID_stage:id_stage|ConditionCheck:CondCheck ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; EQ             ; 0000  ; Unsigned Binary                                                ;
+; NE             ; 0001  ; Unsigned Binary                                                ;
+; CS_HS          ; 0010  ; Unsigned Binary                                                ;
+; CC_LO          ; 0011  ; Unsigned Binary                                                ;
+; MI             ; 0100  ; Unsigned Binary                                                ;
+; PL             ; 0101  ; Unsigned Binary                                                ;
+; VS             ; 0110  ; Unsigned Binary                                                ;
+; VC             ; 0111  ; Unsigned Binary                                                ;
+; HI             ; 1000  ; Unsigned Binary                                                ;
+; LS             ; 1001  ; Unsigned Binary                                                ;
+; GE             ; 1010  ; Unsigned Binary                                                ;
+; LT             ; 1011  ; Unsigned Binary                                                ;
+; GT             ; 1100  ; Unsigned Binary                                                ;
+; LE             ; 1101  ; Unsigned Binary                                                ;
+; AL             ; 1110  ; Unsigned Binary                                                ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EXE_stage:exe_stage|ALU:alu ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; MOV            ; 0001  ; Unsigned Binary                                 ;
+; MVN            ; 1001  ; Unsigned Binary                                 ;
+; ADD            ; 0010  ; Unsigned Binary                                 ;
+; ADC            ; 0011  ; Unsigned Binary                                 ;
+; SUB            ; 0100  ; Unsigned Binary                                 ;
+; SBC            ; 0101  ; Unsigned Binary                                 ;
+; AND            ; 0110  ; Unsigned Binary                                 ;
+; ORR            ; 0111  ; Unsigned Binary                                 ;
+; EOR            ; 1000  ; Unsigned Binary                                 ;
+; CMP            ; 0100  ; Unsigned Binary                                 ;
+; TST            ; 0110  ; Unsigned Binary                                 ;
+; LDR            ; 0010  ; Unsigned Binary                                 ;
+; STR            ; 0010  ; Unsigned Binary                                 ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: EXE_stage:exe_stage|Val2Gen:val2gen ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; LSL            ; 00    ; Unsigned Binary                                         ;
+; LSR            ; 01    ; Unsigned Binary                                         ;
+; ASR            ; 10    ; Unsigned Binary                                         ;
+; ROR            ; 11    ; Unsigned Binary                                         ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM_stage:mem_stage|SRAMController:sramCtrl ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; IDLE           ; 00    ; Unsigned Binary                                                 ;
+; WRITE          ; 01    ; Unsigned Binary                                                 ;
+; READ           ; 10    ; Unsigned Binary                                                 ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2 ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg" ;
++------+-------+----------+----------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                              ;
++------+-------+----------+----------------------------------------------------------------------+
+; ld   ; Input ; Info     ; Stuck at VCC                                                         ;
++------+-------+----------+----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MEM_stage:mem_stage"                                                                     ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; WB_EN_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SRAM_UB_N ; Output ; Info     ; Explicitly unconnected                                                              ;
+; SRAM_LB_N ; Output ; Info     ; Explicitly unconnected                                                              ;
+; SRAM_CE_N ; Output ; Info     ; Explicitly unconnected                                                              ;
+; SRAM_OE_N ; Output ; Info     ; Explicitly unconnected                                                              ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IF_reg:if_reg"                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; pc          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; instruction ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:32     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue May 24 11:08:22 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ARM -c ARM
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file wb_stage.v
+    Info (12023): Found entity 1: WB_stage
+Info (12021): Found 1 design units, including 1 entities, in source file val2gen.v
+    Info (12023): Found entity 1: Val2Gen
+Info (12021): Found 1 design units, including 1 entities, in source file test.v
+    Info (12023): Found entity 1: Test
+Info (12021): Found 1 design units, including 1 entities, in source file tb.v
+    Info (12023): Found entity 1: tb
+Info (12021): Found 1 design units, including 1 entities, in source file statusreg.v
+    Info (12023): Found entity 1: StatusReg
+Info (12021): Found 1 design units, including 1 entities, in source file sramcontroller.v
+    Info (12023): Found entity 1: SRAMController
+Info (12021): Found 1 design units, including 1 entities, in source file sram.v
+    Info (12023): Found entity 1: SRAM
+Info (12021): Found 1 design units, including 1 entities, in source file registerfile.v
+    Info (12023): Found entity 1: RegisterFile
+Info (12021): Found 1 design units, including 1 entities, in source file reg.v
+    Info (12023): Found entity 1: register
+Info (12021): Found 1 design units, including 1 entities, in source file pcreg.v
+    Info (12023): Found entity 1: PC_reg
+Info (12021): Found 1 design units, including 1 entities, in source file mux.v
+    Info (12023): Found entity 1: mux2_32
+Info (12021): Found 1 design units, including 1 entities, in source file mem_stage.v
+    Info (12023): Found entity 1: MEM_stage
+Info (12021): Found 1 design units, including 1 entities, in source file mem_reg.v
+    Info (12023): Found entity 1: MEM_reg
+Info (12021): Found 1 design units, including 1 entities, in source file memory.v
+    Info (12023): Found entity 1: Memory
+Info (12021): Found 1 design units, including 1 entities, in source file instructionmemory.v
+    Info (12023): Found entity 1: InstructionMemory
+Info (12021): Found 1 design units, including 1 entities, in source file if_stage.v
+    Info (12023): Found entity 1: IF_stage
+Info (12021): Found 1 design units, including 1 entities, in source file if_reg.v
+    Info (12023): Found entity 1: IF_reg
+Info (12021): Found 1 design units, including 1 entities, in source file id_stage.v
+    Info (12023): Found entity 1: ID_stage
+Info (12021): Found 1 design units, including 1 entities, in source file id_reg.v
+    Info (12023): Found entity 1: ID_Reg
+Info (12021): Found 1 design units, including 1 entities, in source file hazarddetection.v
+    Info (12023): Found entity 1: HazardDetection
+Info (12021): Found 1 design units, including 1 entities, in source file forwardingunit.v
+    Info (12023): Found entity 1: ForwardingUnit
+Info (12021): Found 1 design units, including 1 entities, in source file exe_stage.v
+    Info (12023): Found entity 1: EXE_stage
+Info (12021): Found 1 design units, including 1 entities, in source file exe_reg.v
+    Info (12023): Found entity 1: EXE_reg
+Info (12021): Found 1 design units, including 1 entities, in source file controlunit.v
+    Info (12023): Found entity 1: ControlUnit
+Info (12021): Found 1 design units, including 1 entities, in source file conditioncheck.v
+    Info (12023): Found entity 1: ConditionCheck
+Info (12021): Found 1 design units, including 1 entities, in source file arm.v
+    Info (12023): Found entity 1: ARM
+Info (12021): Found 1 design units, including 1 entities, in source file alutb.v
+    Info (12023): Found entity 1: alutb
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU
+Info (12127): Elaborating entity "ARM" for the top level hierarchy
+Info (12128): Elaborating entity "IF_stage" for hierarchy "IF_stage:if_stage"
+Info (12128): Elaborating entity "mux2_32" for hierarchy "IF_stage:if_stage|mux2_32:mux"
+Info (12128): Elaborating entity "PC_reg" for hierarchy "IF_stage:if_stage|PC_reg:pc_reg"
+Info (12128): Elaborating entity "InstructionMemory" for hierarchy "IF_stage:if_stage|InstructionMemory:instmem"
+Warning (10030): Net "instructions.data_a" at instructionMemory.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "instructions.waddr_a" at instructionMemory.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "instructions.we_a" at instructionMemory.v(7) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "IF_reg" for hierarchy "IF_reg:if_reg"
+Info (12128): Elaborating entity "ID_stage" for hierarchy "ID_stage:id_stage"
+Warning (10230): Verilog HDL assignment warning at ID_stage.v(74): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ID_stage.v(75): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ID_stage.v(76): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ID_stage.v(77): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ID_stage.v(78): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at ID_stage.v(79): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "ID_stage:id_stage|RegisterFile:RegFile"
+Warning (10240): Verilog HDL Always Construct warning at RegisterFile.v(19): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "ID_stage:id_stage|ControlUnit:CtrlUnit"
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(66): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.v(43): incomplete case statement has no default case item
+Info (12128): Elaborating entity "ConditionCheck" for hierarchy "ID_stage:id_stage|ConditionCheck:CondCheck"
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(32): variable "z" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(33): variable "z" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(34): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(35): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(36): variable "n" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(37): variable "n" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(38): variable "v" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(39): variable "v" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(40): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(40): variable "z" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(41): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(41): variable "z" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(42): variable "n" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(42): variable "v" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(43): variable "n" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(43): variable "v" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(44): variable "z" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(44): variable "n" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(44): variable "v" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(45): variable "z" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(45): variable "n" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ConditionCheck.v(45): variable "v" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at ConditionCheck.v(31): incomplete case statement has no default case item
+Info (12128): Elaborating entity "ID_Reg" for hierarchy "ID_Reg:id_reg"
+Info (12128): Elaborating entity "EXE_stage" for hierarchy "EXE_stage:exe_stage"
+Info (10041): Inferred latch for "alu_val2[0]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[1]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[2]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[3]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[4]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[5]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[6]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[7]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[8]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[9]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[10]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[11]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[12]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[13]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[14]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[15]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[16]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[17]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[18]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[19]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[20]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[21]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[22]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[23]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[24]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[25]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[26]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[27]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[28]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[29]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[30]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val2[31]" at EXE_stage.v(21)
+Info (10041): Inferred latch for "alu_val1[0]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[1]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[2]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[3]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[4]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[5]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[6]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[7]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[8]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[9]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[10]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[11]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[12]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[13]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[14]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[15]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[16]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[17]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[18]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[19]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[20]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[21]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[22]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[23]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[24]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[25]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[26]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[27]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[28]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[29]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[30]" at EXE_stage.v(20)
+Info (10041): Inferred latch for "alu_val1[31]" at EXE_stage.v(20)
+Info (12128): Elaborating entity "ALU" for hierarchy "EXE_stage:exe_stage|ALU:alu"
+Warning (10272): Verilog HDL Case Statement warning at ALU.v(60): case item expression covers a value already covered by a previous case item
+Warning (10272): Verilog HDL Case Statement warning at ALU.v(64): case item expression covers a value already covered by a previous case item
+Warning (10272): Verilog HDL Case Statement warning at ALU.v(65): case item expression covers a value already covered by a previous case item
+Warning (10272): Verilog HDL Case Statement warning at ALU.v(69): case item expression covers a value already covered by a previous case item
+Warning (10270): Verilog HDL Case Statement warning at ALU.v(31): incomplete case statement has no default case item
+Info (12128): Elaborating entity "Val2Gen" for hierarchy "EXE_stage:exe_stage|Val2Gen:val2gen"
+Warning (10240): Verilog HDL Always Construct warning at Val2Gen.v(17): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "EXE_reg" for hierarchy "EXE_reg:exe_reg"
+Info (12128): Elaborating entity "MEM_stage" for hierarchy "MEM_stage:mem_stage"
+Warning (10230): Verilog HDL assignment warning at MEM_stage.v(37): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "SRAMController" for hierarchy "MEM_stage:mem_stage|SRAMController:sramCtrl"
+Warning (10230): Verilog HDL assignment warning at SRAMController.v(35): truncated value with size 32 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at SRAMController.v(39): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at SRAMController.v(49): truncated value with size 32 to match size of target (16)
+Warning (10270): Verilog HDL Case Statement warning at SRAMController.v(94): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at SRAMController.v(94): all case item expressions in this case statement are onehot
+Warning (10230): Verilog HDL assignment warning at SRAMController.v(108): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "register" for hierarchy "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg"
+Info (12128): Elaborating entity "register" for hierarchy "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2"
+Info (12128): Elaborating entity "MEM_reg" for hierarchy "MEM_reg:mem_reg"
+Warning (10230): Verilog HDL assignment warning at MEM_reg.v(16): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "WB_stage" for hierarchy "WB_stage:wb_stage"
+Info (12128): Elaborating entity "HazardDetection" for hierarchy "HazardDetection:hazard_detection"
+Warning (10235): Verilog HDL Always Construct warning at HazardDetection.v(14): variable "forward_en" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at HazardDetection.v(16): variable "EXE_MEM_R_en" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at HazardDetection.v(18): variable "EXE_MEM_R_en" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "ForwardingUnit" for hierarchy "ForwardingUnit:forwarding_unit"
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[15]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[0]" feeding internal logic into a wire
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "E:/UT/S6/CALab/src/db/ARM.ram0_InstructionMemory_d1968ec4.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[31]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[30]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[29]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[28]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[27]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[26]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[25]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[24]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[23]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[22]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[21]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[20]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[19]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[18]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[17]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[16]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[15]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[14]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[13]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[12]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[11]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[10]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[9]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[8]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[7]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[6]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[5]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[4]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[3]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[2]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[1]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val2[0]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[31]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[30]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[29]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[28]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[27]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[26]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[25]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[24]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[23]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[22]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[21]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[20]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[19]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[18]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[17]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[16]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[15]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[14]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[13]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[12]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[11]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[10]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[9]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[8]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[7]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[6]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[5]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[4]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[3]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[2]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[1]" is permanently enabled
+Warning (14026): LATCH primitive "EXE_stage:exe_stage|alu_val1[0]" is permanently enabled
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[31]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[31]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[30]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[30]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[29]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[29]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[28]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[28]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[25]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[25]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[24]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[24]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[23]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[23]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[22]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[22]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[21]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[21]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[16]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[16]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[17]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[17]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[18]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[18]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[19]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[19]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[20]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[20]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[26]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[26]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|read_data_temp[27]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg2|out[27]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[2]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[2]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[0]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[0]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[1]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[1]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[14]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[14]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[15]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[15]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[12]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[12]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[13]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[13]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[8]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[8]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[9]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[9]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[6]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[6]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[7]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[7]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[5]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[5]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[3]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[3]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[4]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[4]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[10]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[10]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MEM_stage:mem_stage|SRAMController:sramCtrl|low_temp[11]" to the node "MEM_stage:mem_stage|SRAMController:sramCtrl|register:read_data_reg|out[11]" into an OR gate
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (17049): 29 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file E:/UT/S6/CALab/src/output_files/ARM.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3069 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 19 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 3031 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 166 warnings
+    Info: Peak virtual memory: 4609 megabytes
+    Info: Processing ended: Tue May 24 11:08:57 2022
+    Info: Elapsed time: 00:00:35
+    Info: Total CPU time (on all processors): 00:00:34
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/UT/S6/CALab/src/output_files/ARM.map.smsg.
+
+

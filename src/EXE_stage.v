@@ -17,8 +17,8 @@ module EXE_stage(
     wire [31:0] val2, alu_val1, alu_val2;
 
 
-    assign alu_val1 = sel_src1 == 2'b00 ? val_rn : sel_src1 == 2'b01 ? alu_in : sel_src1 == 2'b10 ? WB_value : alu_val1;
-    assign alu_val2 = sel_src2 == 2'b00 ? val_rm : sel_src2 == 2'b01 ? alu_in : sel_src2 == 2'b10 ? WB_value : alu_val2;
+    assign alu_val1 = sel_src1 == 2'd0 ? val_rn : sel_src1 == 2'd1 ? alu_in : sel_src1 == 2'd2 ? WB_value : alu_val1;
+    assign alu_val2 = sel_src2 == 2'd0 ? val_rm : sel_src2 == 2'd1 ? alu_in : sel_src2 == 2'd2 ? WB_value : alu_val2;
 
     assign val_rm_out = alu_val2;
 

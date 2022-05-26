@@ -20,7 +20,7 @@ module Val2Gen(
         else if (imm) begin
             val2 = {24'd0, shifter_operand[7:0]};
 
-            for (i=0; i<{shifter_operand[11:8], 1'b0}; i=i+1) begin
+            for (i=0; i < {shifter_operand[11:8], 1'b0}; i=i+1) begin
                 val2 = {val2[0], val2[31:1]};
             end
         end

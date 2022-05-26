@@ -1,6 +1,8 @@
 `timescale 1ns/1ns
+
 module ARM(
-    input clk, rst, forward_en
+    input clk, rst, forward_en,
+    inout[15:0] SRAM_DQ, output[17:0] SRAM_ADDR, output SRAM_WE_N
 );
   wire B;
   wire [31:0] branch_addr, 
@@ -9,9 +11,12 @@ module ARM(
       mem_pc_out, mem_reg_pc_out, wb_pc_out, wb_reg_pc_out;
     
   wire hazard;
-
-  IF_stage if_stage(clk, rst, hazard, B, branch_addr, if_pc_out, if_inst_out);
-  IF_reg if_reg(clk, rst, hazard, B, if_pc_out, if_inst_out, if_reg_pc_out, if_reg_inst_out);
+  wire freeze;
+  wire sram_ready;
+  or f(freeze, ~sram_ready, hazard); // for handling sram hazard
+  
+  IF_stage if_stage(clk, rst, freeze, B, branch_addr, if_pc_out, if_inst_out);
+  IF_reg if_reg(clk, rst, freeze, B, if_pc_out, if_inst_out, if_reg_pc_out, if_reg_inst_out);
     
   wire WB_EN_before, MEM_R_EN_before, MEM_W_EN_IN_before, B_IN_before, S_IN_before;
   wire [3:0] EXE_CMD_IN_before;
@@ -77,6 +82,7 @@ module ARM(
   ID_Reg id_reg(
     .clk(clk),
     .rst(rst),
+    .ld(sram_ready),
     .flush(B),
     .WB_EN_IN(WB_EN_before),
     .MEM_R_EN_IN(MEM_R_EN_before),
@@ -132,7 +138,7 @@ module ARM(
   wire [31:0] alu_res_mem_out, mem_data_reg_out, alu_res_mem_reg_out, mem_data_mem_reg_out;
 
   EXE_reg exe_reg(
-    .clk(clk), .rst(rst), 
+    .clk(clk), .rst(rst), .ld(sram_ready),
     .WB_en_in(WB_EN_id_reg_out), .MEM_R_EN_in(MEM_R_EN), .MEM_W_EN_in(MEM_W_EN),
     .alu_result_in(exe_alu_out), .ST_val_in(exe_val_rm_out),
     .Dest_in(Dest),
@@ -143,6 +149,7 @@ module ARM(
 
   wire [3:0] dest_mem_out_temp;
   wire WB_EN_mem_temp;
+
   MEM_stage mem_stage(
     .clk(clk), .rst(rst),
     .MEM_R_EN(MEM_R_EN_exe_reg_out), .MEM_W_EN(MEM_W_EN_exe_reg_out), .WB_EN(EXE_reg_WB_en_out),
@@ -151,11 +158,22 @@ module ARM(
     .MEM_R_EN_out(MEM_R_EN_mem_out),
     .WB_EN_out(WB_EN_mem_temp),
     .alu_res_out(alu_res_mem_out), .mem_data_out(mem_data_reg_out),
-    .Dest_out(dest_mem_out_temp)
+    .Dest_out(dest_mem_out_temp),
+    .sram_ready(sram_ready),
+    .SRAM_DQ(SRAM_DQ),
+    .SRAM_ADDR(SRAM_ADDR),
+    .SRAM_WE_N(SRAM_WE_N),
+    .SRAM_UB_N(),
+    .SRAM_LB_N(),
+    .SRAM_CE_N(),
+    .SRAM_OE_N()
   );
+
   
+
+
   MEM_reg mem_reg(
-    .clk(clk), .rst(rst),
+    .clk(clk), .rst(rst), .ld(sram_ready),
     .MEM_R_EN(MEM_R_EN_mem_out), .WB_EN(EXE_reg_WB_en_out),
     .alu_res(alu_res_mem_out), .data_mem(mem_data_reg_out),
     .Dest(dest_mem_out_temp),

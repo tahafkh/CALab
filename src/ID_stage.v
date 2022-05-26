@@ -19,13 +19,6 @@ module ID_stage(
   output [3:0] src1, src2,
   output Two_src
 );
-  
-  assign src1 = Instruction[19:16];
-  assign src2 = MEM_W_EN ? Instruction[15:12] : Instruction[3:0];
-  assign imm = Instruction[25];
-  assign Shift_operand = Instruction[11:0];
-  assign Signed_imm_24 = Instruction[23:0];
-  assign Dest = Instruction[15:12];
 
 
   or(Two_src, MEM_W_EN, ~imm);
@@ -45,6 +38,14 @@ module ID_stage(
   wire B_before, WB_EN_before, MEM_R_EN_before, MEM_W_EN_before;
   wire [3:0] EXE_CMD_before;
   wire S_before;
+
+  assign src1 = Instruction[19:16];
+  assign src2 = MEM_W_EN_before ? Instruction[15:12] : Instruction[3:0];
+  assign imm = Instruction[25];
+  assign Shift_operand = Instruction[11:0];
+  assign Signed_imm_24 = Instruction[23:0];
+  assign Dest = Instruction[15:12];
+
 
   ControlUnit CtrlUnit(
   .s(Instruction[20]),

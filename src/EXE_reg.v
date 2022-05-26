@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 module EXE_reg(
-    input clk, rst, WB_en_in, MEM_R_EN_in, MEM_W_EN_in,
+    input clk, rst, ld, WB_en_in, MEM_R_EN_in, MEM_W_EN_in,
     input [31:0] alu_result_in, ST_val_in,
     input [3:0] Dest_in,
     output reg WB_en, MEM_R_EN, MEM_W_EN,
@@ -14,7 +14,7 @@ module EXE_reg(
             ST_val <= 32'd0;
             Dest <= 4'd0;
         end
-        else begin
+        else if (ld) begin
             WB_en <= WB_en_in; 
             MEM_R_EN <= MEM_R_EN_in; 
             MEM_W_EN <= MEM_W_EN_in;
