@@ -1,0 +1,6 @@
+
+State Machine - |ARM|MEM_stage:mem_stage|SRAMController:sramCtrl|ps
+Name ps.00 ps.READ ps.WRITE 
+ps.00 0 0 0 
+ps.WRITE 1 0 1 
+ps.READ 1 1 0 

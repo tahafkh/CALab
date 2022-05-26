@@ -1,3 +1,9 @@
 *.bak
-*.mpf
-*.mti
+ARM Processor.mpf
+ARM Processor.cr.mti
+arm/
+files/
+db/
+incremental_db/
+output_files/
+work/
